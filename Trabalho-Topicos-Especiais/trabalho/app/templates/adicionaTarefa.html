@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nova Tarefa</title>
+</head>
+<body>
+    <p> Nova Tarefa </p>
+    <form action = "{% url 'addTarefa' %}" method = 'POST'>
+        {% csrf_token %}
+        Titulo: <input type="text" name = 'titulo'> <br>
+        Descrição: <input type="text" name = 'descricao'> <br>
+        Data de crição: <input type="date" name = 'data'>
+        <p>Status da tarefa:</p>
+        <input type="radio" id="pendente" name="status" value="Pendente">
+        <label for="Pendente">Pendente</label><br>
+        <input type="radio" id="Em andamento" name="status" value="Em andamento">
+        <label for="Em andamento">Em andamento</label><br>
+        <input type="radio" id="concluido" name="status" value="Concluido">
+        <label for="Concluido">Concluido</label> <br>
+        <br>
+        <input type = 'submit' value = 'Adicionar nova tarefa'>
+    </form>
+
+</body>
+</html>

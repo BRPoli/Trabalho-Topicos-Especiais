@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+    <p>Login</p>
+    <form action = "{% url 'login'%}" method = 'POST'>
+        {% csrf_token %}
+        <input type = 'text' placeholder = "Username..." name = 'username'>
+        <br>
+        <input type = 'password' placeholder="Senha..." name = 'senha'>
+        <br>
+        <input type = 'submit' value='Logar'>
+    </form>
+    <p>Não tem um login? <a href = '/cadastro'>Click aqui para se registrar</a>
+</body>
+</html>
